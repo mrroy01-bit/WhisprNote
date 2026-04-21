@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 59 130 246;
+    --primary-light: 191 219 254;
+    --primary-dark: 30 58 138;
+    --surface: 255 255 255;
+    --surface-muted: 248 250 252;
+    --text-main: 15 23 42;
+    --text-subtle: 100 116 139;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-slate-50 text-slate-900 antialiased transition-colors;
+    background-image:
+      radial-gradient(circle at top left, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.98) 35%, rgba(226, 232, 240, 0.72) 100%);
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: #1e293b !important;
+  }
+}
+
+@layer components {
+  .transition-smooth {
+    @apply transition-all duration-200 ease-out;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900;
+  }
+
+  .ui-panel {
+    @apply rounded-[28px] border border-slate-200/80 bg-white/85 shadow-[0_28px_60px_-40px_rgba(15,23,42,0.35)] backdrop-blur-xl;
+  }
+
+  .ui-skeleton {
+    @apply relative overflow-hidden bg-slate-200/80;
+  }
+
+  .ui-skeleton-shimmer::after {
+    content: '';
+    @apply absolute inset-0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.45) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
