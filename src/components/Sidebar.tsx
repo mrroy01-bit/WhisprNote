@@ -142,7 +142,7 @@ export function Sidebar({
             AI note
           </span>
           <span className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-300">
-            Groq
+              Beta
           </span>
         </motion.button>
 

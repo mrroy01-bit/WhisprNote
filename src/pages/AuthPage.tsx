@@ -57,7 +57,7 @@ export function AuthPage() {
           </div>
 
           <h1 className="text-3xl font-bold text-center mb-2 text-slate-900 dark:text-white">
-            NotionClone
+            Whisprnote
           </h1>
           <p className="text-center text-slate-500 dark:text-slate-400 mb-8">
             Your notes, beautifully organized
